@@ -1,0 +1,15 @@
+<gridster [options]="options">
+  <gridster-item *ngFor="let item of layout"
+    [item]="item"
+    (dragover)="layoutService.setDropId(item.id)" >
+    <!-- <div style="position:relative">
+      
+</div> -->
+    <ng-container appLayoutItem [componentRef]="layoutService.getComponentRef(item.id)"></ng-container>
+    <button mat-icon  style="position:absolute; top:0; right:0"    
+    (click)="layoutService.removeItem($event, item)"
+    (touchstart)="layoutService.removeItem($event, item)" matTooltip="Remove">
+<mat-icon>delete</mat-icon>
+</button>
+  </gridster-item>
+</gridster>

@@ -1,0 +1,47 @@
+<div class="page-header">
+  <h3 class="page-title">
+    <span class="page-title-icon bg-gradient-primary text-white mr-2">
+      <i class="mdi mdi-home"></i>                 
+    </span>
+    Drag and Drop Dashboard
+  </h3>
+  <div class="btn-group">
+    <button type="button" class="btn btn-info">Grid Options</button>
+    <div class="btn-group" ngbDropdown>
+      <button type="button" class="btn btn-info dropdown-toggle dropdown-toggle-split" id="dropdownMenuSplitButton5" ngbDropdownToggle>
+        <span class="sr-only">Toggle Dropdown</span>
+      </button>
+      <div ngbDropdownMenu aria-labelledby="dropdownMenuSplitButton5">
+        <h6 class="dropdown-header">Available Sizes</h6>
+        <a class="dropdown-item" (click)="panelSize(2)">1 X 1 </a>
+        <a class="dropdown-item" (click)="panelSize(4)">2 X 2 </a>
+        <a class="dropdown-item" (click)="panelSize(9)">3 X 3 </a>
+        <a class="dropdown-item" (click)="panelSize(16)">4 X 4</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" (click)="layoutService.addItem()">Add Panel</a>
+          
+      </div>
+    </div>
+  </div>
+  <button mat-mini-fab (click)="layoutService.addItem()" class="add-button cols-2">
+    <mat-icon>add</mat-icon>
+  </button>
+  <!-- <button type="button" class="btn btn-info" (click)="layoutService.resetGrid()">Reset Grid</button> -->
+  <button type="button" mat-icon (click)="layoutService.resetGrid()" class="btn btn-gradient-warning btn-icon-text">
+    <i class="mdi mdi-reload btn-icon-prepend"></i>                                                    
+    Reset
+  </button>
+  
+  <nav aria-label="breadcrumb">
+    <ul class="breadcrumb">
+      <li class="breadcrumb-item active" aria-current="page">
+        <span></span>Overview
+        <i class="mdi mdi-alert-circle-outline icon-sm text-primary align-middle"></i>
+      </li>
+    </ul>
+  </nav>
+</div>
+<div>
+  <app-layout></app-layout>
+</div>
+
